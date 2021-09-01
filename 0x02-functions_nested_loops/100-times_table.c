@@ -1,18 +1,66 @@
 #include "main.h"
 
+int _putchar(char c);
+
 /**
- * main - check the code for ALX School students.
+ * print_times_table - print the times table until n
  *
- * Return: Always 0.
+ * @n: n times table
+ *
+ * Return: No return
  */
-int main(void)
+
+void print_times_table(int n)
 {
-    print_times_table(3);
-    _putchar('\n');
-    print_times_table(5);
-    _putchar('\n');
-    print_times_table(98);
-    _putchar('\n');
-    print_times_table(12);  
-    return (0);
+	int i;
+	int j;
+
+	if (n >= 0 && n <= 15)
+	{
+
+		for (i = 0; i <= n; i++)
+		{
+
+			for (j = 0; j <= n; j++)
+			{
+
+				if ((i * j) < 10)
+				{
+					if (j != 0)
+					{
+						_putchar(' ');
+						_putchar(' ');
+						_putchar(' ');
+					}
+					_putchar((j * i) + '0');
+				}
+
+				else if ((i * j) < 100)
+				{
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((((j * i) / 10) % 10) + '0');
+					_putchar(((j * i) % 10) + '0');
+				}
+
+				else if ((i * j) < 1000)
+				{
+					_putchar(' ');
+					_putchar((((j * i) / 100) % 10) + '0');
+					_putchar((((j * i) / 10) % 10) + '0');
+					_putchar(((j * i) % 10) + '0');
+				}
+			if (j != (n))
+			{
+				_putchar(',');
+			}
+
+			}
+
+		_putchar('\n');
+
+		}
+
+	}
+
 }
